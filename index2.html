@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div class="main">
+        <div>
+            <p>Want to know my name;</p>
+            <p id="showmyname"></p>
+            <button id="btn">Click here</button>
+            <button id="btn1">Stop</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        const showmyname = document.querySelector('#showmyname');
+        const btn = document.querySelector('#btn');
+        const stopInterval = document.querySelector('#btn1');
+        
+        let timeRef;
+        let num = 0;
+
+        const fuckMe = () => {
+            showmyname.innerHTML = "In 3 2 1 and boom..."
+
+            timeRef = setInterval(() => {
+                showmyname.innerHTML = `${num}`;
+                num = num + 1;
+            }, 1000)
+        }
+        btn.addEventListener('click', fuckMe);
+
+        stopInterval.addEventListener('click', () => {
+            clearInterval(timeRef);
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
